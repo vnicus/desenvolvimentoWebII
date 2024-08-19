@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - completar o nome</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <h2>Juntar Nome e Sobrenome</h2>
+    <fieldset>
+        <form id="nomes" action="#" get="get">
+
+
+            <label for="nome">
+                Nome:
+            </label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu Nome">
+
+            <label for="sobrenome">
+                Sobrenome:
+            </label>
+            <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu Sobrenome">
+        </form>
+
+        <button id="btn-juntar" onclick="juntarNome()">Juntar Nome</button>
+        <!-- ao dar o click ira chamar a funçãoo juntarNome() -->
+        <button id="btn-limpar" onclick="limparNome()">Limpar</button>
+
+        <hr>
+
+        <p>Nome completo: </p>
+        <p id="nomeCompleto"></p>
+    </fieldset>
+
+    <script>
+        function juntarNome() {
+            let nome = document.getElementById("nome").value;
+            let sobrenome = document.getElementById("sobrenome").value;
+
+            document.getElementById("nomeCompleto").innerHTML = "<strong>" + nome + " " + sobrenome + "<strong>";
+        }
+
+        function limparNome() {
+            document.getElementById("nomes").reset();
+        }
+    </script>
+
+</body>
+
+</html>
