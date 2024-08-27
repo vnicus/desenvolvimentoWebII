@@ -28,7 +28,9 @@
 
         <button id="btn-juntar" onclick="juntarNome()">Juntar Nome</button>
         <!-- ao dar o click ira chamar a funçãoo juntarNome() -->
-        <button id="btn-limpar" onclick="limparNome()">Limpar</button>
+        <button id="btn-nomeCompleto" onclick="juntarNomesCompleto()">Enviar</button>
+        <button id="btn-limpar" onclick="limparNome()">Limpar</button> <!--Limpar formulario-->
+        <button id="btn-imprimir" onclick="window.print()">Imprimir</button> <!-- button para Imprimir a pagina -->
 
         <hr>
 
@@ -36,17 +38,8 @@
         <p id="nomeCompleto"></p>
     </fieldset>
 
-    <script>
-        function juntarNome() {
-            let nome = document.getElementById("nome").value;
-            let sobrenome = document.getElementById("sobrenome").value;
-
-            document.getElementById("nomeCompleto").innerHTML = "<strong>" + nome + " " + sobrenome + "<strong>";
-        }
-
-        function limparNome() {
-            document.getElementById("nomes").reset();
-        }
+    <script src="js/utilidades.js">
+        
     </script>
 
 </body>

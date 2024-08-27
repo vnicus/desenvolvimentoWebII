@@ -4,27 +4,35 @@ body {
     align-items: center;
 }
 
-fieldset{
+fieldset {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.342);
+
+    #nomes {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        margin-top: 5px;
+    }
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    margin-bottom: 10px;
-}
 
-label {
-    margin-top: 5px;
-}
-
-button{
+button {
     padding: 5px 10px;
     margin: 0 0 10px;
     width: 100%;
     border-radius: 20px;
     border: 1px solid black;
+    transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    cursor: pointer;
+}
+
+button:hover{
+    background: rgb(0, 0, 0);
+   color: white;
 }
