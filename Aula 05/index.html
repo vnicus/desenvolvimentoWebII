@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Media Final de Desenvolvimento Web II (DW2)</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Calcular Média Final</legend>
+
+        <form id="media" action="#" get="POST">
+
+            <label for="avalicao1">Digite a nota da avalição 1</label>
+            <input type="text" id="avalicao1" name="avalicao1" placeholder="Digite a sua nota (A1)">
+
+            <label for="avalicao2">Digite a nota da avalição 2</label>
+            <input type="text" name="avalicao2" id="avalicao2" placeholder="Digite a sua nota (A2)">
+
+            <label for="projeto1">Digite a nota do Projeto 1</label>
+            <input type="text" name="projeto1" id="projeto1" placeholder="Digite a sua nota (P1)">
+
+            <label for="projeto2">Digite a nota do Projeto 2</label>
+            <input type="text" name="projeto2" id="projeto2" placeholder="Digite a sua nota (P2)">
+
+            <label for="pdiaria">Digite a nota de Participação</label>
+            <input type="text" name="pdiaria" id="pdiaria" placeholder="Digite a sua nota (PD)">
+        </form>
+
+        <div class="localBtn">
+            <button id="btnCalcular" onclick="btnCalcular()">Calcular Média Final</button>
+            <button id="limpar" onclick="limpar()">Limpar</button>
+        </div>
+
+        <hr>
+
+        <div class="localResultado">
+            <p id="resultadoFinal">Resultado Final:</p>
+            <p id="mediaFinal">Média Final:</p>
+        </div>
+
+        <script src="js/script.js">
+        </script>
+
+    </fieldset>
+
+</body>
+
+</html>
