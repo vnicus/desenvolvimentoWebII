@@ -14,30 +14,135 @@
 
 </head>
 
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Inter';
+    }
+
+    :root {
+        background-color: #242424;
+        color: #ffffffde;
+        color-scheme: dark;
+
+    }
+
+    body {
+        margin: 0 auto;
+        height: 100vh;
+        width: 100%;
+
+        main {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .inputs {
+            margin-bottom: 5px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .acoes {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    label {
+        margin-top: 7px;
+        font-weight: 300;
+    }
+
+    input {
+        margin: 2px 0;
+        padding: 10px;
+        border-radius: 2rem;
+        border: 1px solid white;
+        transition: .3s;
+    }
+
+    input:focus {
+        border-radius: .5rem;
+    }
+
+    button {
+        width: 25%;
+        padding: 10px;
+        margin: 0 2px;
+        border: 1px solid gray;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    button:hover {
+        border: 1px solid white;
+        background-color: chocolate;
+        box-shadow: 0 0 15px chocolate;
+        border-radius: .5rem;
+    }
+
+    #result {
+        visibility: hidden;
+    }
+</style>
+
 <body>
-    <label class="label-input" for="num1">Numero 1:</label>
-    <input type="number" id="num1" placeholder="Digite o valor numero 1">
+    <main>
 
-    <label class="label-input" for="num2">Numero 2:</label>
-    <input type="number" id="num2" placeholder="Digite o valor numero 2">
+        <div class="content">
 
-    <button onclick="somar()">+</button>
-    <button onclick="sub()">–</button>
-    <button onclick="mult()">×</button>
-    <button onclick="dividir()">÷</button>
+            <div class="inputs">
+                <label class="label-input" for="num1">Numero 1:</label>
+                <input type="number" id="num1" placeholder="Digite o valor numero 1">
 
-    <legend>
-        <h2 id="result"></h2>
-    </legend>
+                <label class="label-input" for="num2">Numero 2:</label>
+                <input type="number" id="num2" placeholder="Digite o valor numero 2">
+            </div>
+
+            <div class="acoes">
+                <button onclick="somar()">+</button>
+                <button onclick="sub()">–</button>
+                <button onclick="mult()">×</button>
+                <button onclick="dividir()">÷</button>
+            </div>
+
+        </div>
+
+        <div class="resultado">
+            <h2 id="result">.</h2>
+        </div>
+
+    </main>
 </body>
 
 <script>
+    let exibir = document.getElementById('result');
+    let valorResult = exibir.value;
+
+    exibir.style.visibility = 'hidden';
+
     function somar() {
         let n1 = document.getElementById('num1').value;
         let n2 = document.getElementById('num2').value;
         const result = document.getElementById('result');
 
         let soma = parseFloat(n1) + parseFloat(n2)
+        exibir.style.visibility = 'visible';
         return result.innerHTML = `${soma}`;
     }
 
@@ -47,6 +152,7 @@
         const result = document.getElementById('result');
 
         let sub = n1 - n2
+        exibir.style.visibility = 'visible';
         return result.innerHTML = `${sub}`;
     }
 
@@ -56,6 +162,7 @@
         const result = document.getElementById('result');
 
         let mult = n1 * n2
+        exibir.style.visibility = 'visible';
         return result.innerHTML = `${mult}`;
     }
 
@@ -65,8 +172,10 @@
         const result = document.getElementById('result');
 
         let dividir = n1 / n2
+        exibir.style.visibility = 'visible';
         return result.innerHTML = `${dividir}`;
     }
+
 </script>
 
 </html>
